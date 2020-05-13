@@ -29,10 +29,19 @@ chrome.extension.sendMessage({}, function (response) {
                 $(document).ready(function () {
                     //radio
                     $(".freebirdFormviewerViewItemsRadioChoicesContainer").each(function () {
+                        var clone = $(this).children().last().clone().appendTo(this)
+                        clone.attr("aria-hidden", "true")
+                        clone.find(".appsMaterialWizToggleRadiogroupEl")
+                            .attr("label", "Hidden Option")
+                            .attr("data-value", "sdfasdasdfasdf")
+                        clone.hide()
+
+                        console.log($(this).children().last())
 
                         $(this).find(".freebirdFormviewerViewItemsRadioOptionContainer").each(function () {
 
                             $(this).append("<button class='x-button'>✖</button>").addClass("relative-position")
+
 
                         })
 
@@ -47,6 +56,18 @@ chrome.extension.sendMessage({}, function (response) {
 
                         })
 
+                    })
+
+
+                    $(".freebirdThemedRadio").click(function(){
+                        var parent = $(this).children(".appsMaterialWizToggleRadiogroupEl")
+
+                        if($(this).children().hasClass("isChecked")) {
+
+                            $(this).closest(".freebirdFormviewerViewItemsRadioChoicesContainer")
+                                .children().last().children("label").click()
+
+                        }
                     })
 
                     $(".x-button").click(disableOption)

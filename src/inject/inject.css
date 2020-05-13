@@ -4,10 +4,12 @@
 
 .disabled-option {
     border-radius: 5px;
-    padding-left: 10px;
-    margin-left: -10px;
     opacity: 0.5;
 
+}
+
+.disabled-option .freebirdThemedRadio{
+    pointer-events: none;
 }
 
 .disabled-option > label {
@@ -22,7 +24,7 @@
 .x-button {
     position: absolute;
     right: 6px;
-    /*display: none;*/
+    display: none;
     background-color: rgba(10, 10, 10, .4);
     color: white;
     border: none;
@@ -45,7 +47,15 @@
     display: block
 }
 
+
 .freebirdFormviewerViewItemsRadioOptionContainer {
     display: flex;
 }
 
+
+.freebirdFormviewerViewItemsCheckboxContainer:hover > .x-button {
+    display: block
+}
+.freebirdFormviewerViewItemsCheckboxContainer {
+    display: flex;
+}

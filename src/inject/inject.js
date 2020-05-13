@@ -27,6 +27,7 @@ chrome.extension.sendMessage({}, function (response) {
             function handler() {
                 console.log('jquery added :)');
                 $(document).ready(function () {
+                    //radio
                     $(".freebirdFormviewerViewItemsRadioChoicesContainer").each(function () {
 
                         $(this).find(".freebirdFormviewerViewItemsRadioOptionContainer").each(function () {
@@ -37,10 +38,22 @@ chrome.extension.sendMessage({}, function (response) {
 
                     })
 
+                    //configuration for checkboxes
+                    $(".freebirdFormviewerViewItemsCheckboxOptionContainer").each(function () {
+
+                        $(this).find(".freebirdFormviewerViewItemsCheckboxChoice").each(function () {
+
+                            $(this).append("<button class='x-button'>✖</button>").addClass("relative-position")
+
+                        })
+
+                    })
+
                     $(".x-button").click(disableOption)
 
                     function disableOption() {
-                        var parent = $(this).closest(".freebirdFormviewerViewItemsRadioOptionContainer")
+                        //var parent = $(this).closest(".freebirdFormviewerViewItemsRadioOptionContainer")
+                        var parent = $(this).parent()
 
                         if (parent.attr("data-disabled") == "true") {
                             parent.unbind('click');

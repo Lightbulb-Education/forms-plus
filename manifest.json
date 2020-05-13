@@ -9,7 +9,6 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "default_locale": "en",
   "permissions": [
     "https://docs.google.com/forms/d/e/*"
   ],
@@ -20,15 +19,10 @@
       ],
       "css": [
         "src/inject/inject.css"
-      ]
-    },
-    {
-      "matches": [
-        "https://docs.google.com/forms/d/e/*"
       ],
       "js": [
-        "src/inject/inject.js",
-        "js/jquery/jquery.js"
+        "js/jquery/jquery.js",
+        "src/inject/inject.js"
       ]
     }
   ]

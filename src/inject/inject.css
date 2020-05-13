@@ -43,7 +43,7 @@
 
 }
 
-.freebirdFormviewerViewItemsRadioOptionContainer:hover > .x-button {
+.freebirdFormviewerViewItemsRadioOptionContainer:hover .x-button {
     display: block
 }
 
@@ -53,7 +53,7 @@
 }
 
 
-.freebirdFormviewerViewItemsCheckboxContainer:hover > .x-button {
+.freebirdFormviewerViewItemsCheckboxChoice:hover .x-button {
     display: block
 }
 .freebirdFormviewerViewItemsCheckboxContainer {

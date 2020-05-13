@@ -16,6 +16,7 @@ $(document).ready(function () {
                     ele.setAttribute("data-text-min", qs[key][4][0][4][0][2][0])
                 }
 
+<<<<<<< HEAD
             } catch (e) {
             }
         }
@@ -82,6 +83,41 @@ $(document).ready(function () {
                 }
             }
         })
+=======
+            // Then bind the event to the callback function.
+            // There are several events for cross browser compatibility.
+            script.onreadystatechange = handler;
+            script.onload = handler;
+
+            // Fire the loading
+            head.appendChild(script);
+
+            function handler() {
+                console.log('jquery added :)');
+                $(document).ready(function () {
+                    //radio
+                    $(".freebirdFormviewerViewItemsRadioChoicesContainer").each(function () {
+                        var clone = $(this).children().last().clone().appendTo(this)
+                        clone.attr("aria-hidden", "true")
+                        clone.find(".appsMaterialWizToggleRadiogroupEl")
+                            .attr("label", "Hidden Option")
+                            .attr("data-value", "sdfasdasdfasdf")
+                        clone.hide()
+
+                        console.log($(this).children().last())
+
+                        $(this).find(".freebirdFormviewerViewItemsRadioOptionContainer").each(function () {
+
+                            $(this).append("<button class='x-button'>✖</button>").addClass("relative-position")
+
+
+                        })
+
+                    })
+
+                    //configuration for checkboxes
+                    $(".freebirdFormviewerViewItemsCheckboxOptionContainer").each(function () {
+>>>>>>> allow deselection of radio buttons
 
 
         $(".freebirdFormviewerViewItemsRadiogroupRadioGroup .freebirdThemedRadio").click(function () {
@@ -99,8 +135,24 @@ $(document).ready(function () {
         })
 
 
+<<<<<<< HEAD
         //eliminate option on x-button click
         $(".x-button").click(eliminateOption)
+=======
+
+                    $(".freebirdThemedRadio").click(function(){
+                        var parent = $(this).children(".appsMaterialWizToggleRadiogroupEl")
+
+                        if($(this).children().hasClass("isChecked")) {
+
+                            $(this).closest(".freebirdFormviewerViewItemsRadioChoicesContainer")
+                                .children().last().children("label").click()
+
+                        }
+                    })
+
+                    $(".x-button").click(disableOption)
+>>>>>>> allow deselection of radio buttons
 
         function eliminateOption() {
             var parent = $(this).parent()

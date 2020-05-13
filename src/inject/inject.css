@@ -1,0 +1,51 @@
+/**
+ * Place your custom CSS styles here.
+ **/
+
+.disabled-option {
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-left: -10px;
+    opacity: 0.5;
+
+}
+
+.disabled-option > label {
+    text-decoration: line-through;
+}
+
+.relative-position {
+    position: relative;
+    display: flex;
+}
+
+.x-button {
+    position: absolute;
+    right: 6px;
+    /*display: none;*/
+    background-color: rgba(10, 10, 10, .4);
+    color: white;
+    border: none;
+    border-radius: 290486px;
+    height: 20px;
+    position: relative;
+    vertical-align: top;
+    width: 20px;
+    margin: .5rem;
+    font-size: .6rem;
+    outline: none;
+}
+
+.x-button:hover {
+    display: block;
+
+}
+
+.freebirdFormviewerViewItemsRadioOptionContainer:hover > .x-button {
+    display: block
+}
+
+.freebirdFormviewerViewItemsRadioOptionContainer {
+    display: flex;
+}
+

@@ -48,6 +48,17 @@ $(document).ready(function () {
 
         })
 
+        $(".freebirdFormviewerViewItemsRadiogroupRadioGroup").each(function(){
+            var lastElement = $(this).find("label.freebirdMaterialScalecontentColumn").last()
+            var clone = lastElement.clone().appendTo(lastElement.parent())
+            clone.attr("aria-hidden", true)
+            clone.find(".appsMaterialWizToggleRadiogroupEl")
+                .attr("label", "Hidden Option")
+                .attr("data-value", r)
+            clone.find(".appsMaterialWizToggleRadiogroupEl").removeClass("isChecked")
+            clone.hide()
+        })
+
         //configuration for checkboxes
         $(".freebirdFormviewerViewItemsCheckboxOptionContainer").each(function () {
             //add a eliminate button to each option
@@ -58,7 +69,7 @@ $(document).ready(function () {
         })
 
 
-        $(".freebirdThemedRadio").click(function () {
+        $(".freebirdFormviewerViewItemsRadioChoicesContainer .freebirdThemedRadio").click(function () {
             var allOptions = $(this).closest(".freebirdFormviewerViewItemsRadioChoicesContainer").children()
             var parent = $(this).closest(".freebirdFormviewerViewItemsItemItem")
             var required = parent.find(".freebirdFormviewerViewItemsItemRequiredAsterisk").length != 0
@@ -71,6 +82,22 @@ $(document).ready(function () {
                 }
             }
         })
+
+
+        $(".freebirdFormviewerViewItemsRadiogroupRadioGroup .freebirdThemedRadio").click(function () {
+            var allOptions = $(this).closest(".freebirdMaterialScalecontentContainer").children("label")
+            var parent = $(this).closest(".freebirdFormviewerViewItemsItemItem")
+            var required = parent.find(".freebirdFormviewerViewItemsItemRequiredAsterisk").length != 0
+
+            if (!required) {
+                //if radio is already checked...
+                if ($(this).children().hasClass("isChecked")) {
+                    //...select the hidden option instead
+                    allOptions.last().click()
+                }
+            }
+        })
+
 
         //eliminate option on x-button click
         $(".x-button").click(eliminateOption)
@@ -105,7 +132,7 @@ $(document).ready(function () {
         )
 
         //on text change update counters
-        $(".quantumWizTextinputPapertextareaInput, .quantumWizTextinputPaperinputInput").on("change keyup paste keydown load", function () {
+        $(".quantumWizTextinputPapertextareaInput, .quantumWizTextinputPaperinputInput").on("change keyup paste keydown load oninput", function () {
             var parent = $(this).closest(".freebirdFormviewerViewItemsTextTextItem")
             var maxChars = parent.attr('data-text-max');
             var minChars = parent.attr('data-text-min');
@@ -134,7 +161,6 @@ $(document).ready(function () {
         var event = new Event('change');  // (*)
         for (var i = 0; i < elems.length; i++) {
             elems[i].dispatchEvent(event);
-            ;
         }
 
     }

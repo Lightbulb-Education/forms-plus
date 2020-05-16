@@ -60,11 +60,15 @@ $(document).ready(function () {
 
         $(".freebirdThemedRadio").click(function () {
             var allOptions = $(this).closest(".freebirdFormviewerViewItemsRadioChoicesContainer").children()
+            var parent = $(this).closest(".freebirdFormviewerViewItemsItemItem")
+            var required = parent.find(".freebirdFormviewerViewItemsItemRequiredAsterisk").length != 0
 
-            //if radio is already checked...
-            if ($(this).children().hasClass("isChecked")) {
-                //...select the hidden option instead
-                allOptions.last().children("label").click()
+            if (!required) {
+                //if radio is already checked...
+                if ($(this).children().hasClass("isChecked")) {
+                    //...select the hidden option instead
+                    allOptions.last().children("label").click()
+                }
             }
         })
 
@@ -112,12 +116,12 @@ $(document).ready(function () {
                 parent.find(".text-counter")
                     .text($(this).val().length + " / " + maxChars)
                     .css("color", maxChars < $(this).val().length ? "#d93025" : "")
-            //if min chars display current-min
+                //if min chars display current-min
             } else if (minChars) {
                 parent.find(".text-counter")
                     .text($(this).val().length - minChars)
                     .css("color", ($(this).val().length) - minChars < 0 ? "#d93025" : "")
-            //else just show plain character count
+                //else just show plain character count
             } else {
                 parent.find(".text-counter")
                     .text(currentVal.length)
@@ -135,5 +139,3 @@ $(document).ready(function () {
 
     }
 });
-
-

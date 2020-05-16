@@ -81,3 +81,27 @@
 .no-click {
     pointer-events: none;
 }
+
+/* text field */
+.text-counter-container{
+    margin-left: 16px;
+    margin-right: 16px;
+    position: relative;
+}
+
+.text-counter{
+    position: absolute;
+    right: 0px;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: .75rem;
+    line-height: 1.25rem;
+    letter-spacing: .0333333333em;
+    display: inline-block;
+    line-height: normal;
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 16px;
+    padding-right: 0;
+    white-space: nowrap;
+
+}

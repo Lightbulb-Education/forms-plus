@@ -15,7 +15,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://docs.google.com/forms/d/e/*"
+        "https://docs.google.com/forms/*"
       ],
       "css": [
         "src/inject/inject.css"

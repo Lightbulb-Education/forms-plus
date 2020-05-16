@@ -71,6 +71,10 @@ $(document).ready(function () {
                 <div class="text-counter">13 / 20</div>
             </div>`
         )
+        $(".quantumWizTextinputPapertextareaInput").on("change keyup paste keydown", function(){
+            console.log($(this).val().length)
+            $(this).closest(".freebirdFormviewerViewItemsTextTextItem").find(".text-counter").text($(this).val().length)
+        })
     }
 });
 

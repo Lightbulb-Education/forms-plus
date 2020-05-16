@@ -65,6 +65,37 @@ $(document).ready(function () {
             }
 
         }
+
+        $(".freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextLongText").after(
+            `<div class="mdc-text-field-helper-line" style="
+                margin-left: 16px;
+                margin-right: 16px;
+                position: relative;
+            ">
+                    
+                <div class="mdc-text-field-character-counter" style="
+                    position: absolute;
+                    right: 0px;
+                    /* font-family: Roboto, sans-serif; */
+                    -moz-osx-font-smoothing: grayscale;
+                    /* -webkit-font-smoothing: antialiased; */
+                    font-size: .75rem;
+                    line-height: 1.25rem;
+                    /* font-weight: 400; */
+                    letter-spacing: .0333333333em;
+                    /* text-decoration: inherit; */
+                    /* text-transform: inherit; */
+                    display: inline-block;
+                    /* margin-top: 0; */
+                    line-height: normal;
+                    margin-left: auto;
+                    margin-right: 0;
+                    padding-left: 16px;
+                    padding-right: 0;
+                    white-space: nowrap;
+                ">13 / 20</div>
+            </div>`
+        )
     }
 });
 

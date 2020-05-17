@@ -46,7 +46,7 @@ $(document).ready(function () {
 
         //check if a question is required
         function isRequired(element) {
-            var parent = element.closest(".freebirdFormviewerViewItemsItemItem")
+            var parent = $(element).closest(".freebirdFormviewerViewItemsItemItem")
             var required = parent.find(".freebirdFormviewerViewItemsItemRequiredAsterisk").length != 0
             return required
 
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
             //add a eliminate button to each option
             $(this).find(".freebirdFormviewerViewItemsRadioOptionContainer").each(function () {
-                $(this).append("<a class='x-button'></a>")
+                $(this).append("<a class='google-improvements-x-button'></a>")
             })
 
         })
@@ -71,7 +71,7 @@ $(document).ready(function () {
         $(".freebirdFormviewerViewItemsCheckboxOptionContainer").each(function () {
             //add a eliminate button to each option
             $(this).find(".freebirdFormviewerViewItemsCheckboxChoice").each(function () {
-                $(this).append("<a class='x-button'></a>")
+                $(this).append("<a class='google-improvements-x-button'></a>")
             })
 
         })
@@ -137,7 +137,7 @@ $(document).ready(function () {
         //x-button
 
         //eliminate option on x-button click
-        $(".x-button").click(eliminateOption)
+        $(".google-improvements-x-button").click(eliminateOption)
 
         function eliminateOption() {
             var parent = $(this).parent()
@@ -146,16 +146,16 @@ $(document).ready(function () {
             //else eliminate
             if (parent.attr("data-disabled") == "true") {
                 //enable clicks to button
-                parent.children("label").removeClass("no-click")
+                parent.children("label").removeClass("google-improvements-no-click")
 
-                parent.removeClass("disabled-option")
+                parent.removeClass("google-improvements-disabled-option")
                 parent.attr("data-disabled", "false")
 
             } else {
                 //disable clicks to button
-                parent.children("label").addClass("no-click")
+                parent.children("label").addClass("google-improvements-no-click")
 
-                parent.addClass("disabled-option")
+                parent.addClass("google-improvements-disabled-option")
                 parent.attr("data-disabled", "true")
             }
 
@@ -166,8 +166,8 @@ $(document).ready(function () {
 
         //add text counters
         $(".freebirdFormviewerViewItemsTextTextItem").find(".freebirdFormviewerViewItemsTextLongText, .freebirdFormviewerViewItemsTextShortText").after(
-            `<div class="text-counter-container">             
-                <div class="text-counter">0</div>
+            `<div class="google-improvements-text-counter-container">             
+                <div class="google-improvements-text-counter">0</div>
             </div>`
         )
 
@@ -180,17 +180,17 @@ $(document).ready(function () {
 
             //if max chars display current/total
             if (maxChars) {
-                parent.find(".text-counter")
+                parent.find(".google-improvements-text-counter")
                     .text($(this).val().length + " / " + maxChars)
                     .css("color", maxChars < $(this).val().length ? "#d93025" : "")
             //if min chars display current-min
             } else if (minChars) {
-                parent.find(".text-counter")
+                parent.find(".google-improvements-text-counter")
                     .text($(this).val().length - minChars)
                     .css("color", ($(this).val().length) - minChars < 0 ? "#d93025" : "")
             //else just show plain character count
             } else {
-                parent.find(".text-counter")
+                parent.find(".google-improvements-text-counter")
                     .text(currentVal.length)
             }
 

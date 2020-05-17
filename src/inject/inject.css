@@ -1,19 +1,42 @@
-/**
- * Place your custom CSS styles here.
- **/
-
-
-.disabled-option .freebirdThemedRadio, .freebirdThemedCheckbox {
+.google-improvements-no-click {
     pointer-events: none;
 }
 
-.disabled-option > label {
+/* text field */
+.google-improvements-text-counter-container {
+    margin-left: 16px;
+    margin-right: 16px;
+    position: relative;
+}
+
+.google-improvements-text-counter {
+    position: absolute;
+    right: 0px;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: .75rem;
+    line-height: 1.25rem;
+    letter-spacing: .0333333333em;
+    display: inline-block;
+    line-height: normal;
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 16px;
+    padding-right: 0;
+    white-space: nowrap;
+}
+
+/* disabled option */
+.google-improvements-disabled-option .freebirdThemedRadio, .freebirdThemedCheckbox {
+    pointer-events: none;
+}
+
+.google-improvements-disabled-option > label {
     opacity: 0.3;
     text-decoration: line-through;
 }
 
-/* bulma delete */
-.x-button {
+/* bulma delete button */
+.google-improvements-x-button {
     background-color: rgba(10, 10, 10, .2);
     border: none;
     border-radius: 290486px;
@@ -37,17 +60,17 @@
     display: none;
 }
 
-.x-button:hover {
+.google-improvements-x-button:hover {
     display: block;
     background: red;
 }
 
-.x-button::before {
+.google-improvements-x-button::before {
     height: 2px;
     width: 50%;
 }
 
-.x-button::after, .x-button::before {
+.google-improvements-x-button::after, .google-improvements-x-button::before {
     background-color: #fff;
     content: " ";
     display: block;
@@ -58,50 +81,20 @@
     transform-origin: center center;
 }
 
-.x-button::after {
+.google-improvements-x-button::after {
     height: 50%;
     width: 2px;
 }
 
-.freebirdFormviewerViewItemsRadioOptionContainer:hover .x-button {
+.freebirdFormviewerViewItemsRadioOptionContainer:hover .google-improvements-x-button {
     display: block;
 }
 
-
-.freebirdFormviewerViewItemsRadioOptionContainer, .freebirdFormviewerViewItemsCheckboxContainer {
-    display: flex;
-}
-
-
-.freebirdFormviewerViewItemsCheckboxChoice:hover .x-button {
+.freebirdFormviewerViewItemsCheckboxChoice:hover .google-improvements-x-button {
     display: block;
     margin: 0;
 }
 
-.no-click {
-    pointer-events: none;
-}
-
-/* text field */
-.text-counter-container{
-    margin-left: 16px;
-    margin-right: 16px;
-    position: relative;
-}
-
-.text-counter{
-    position: absolute;
-    right: 0px;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: .75rem;
-    line-height: 1.25rem;
-    letter-spacing: .0333333333em;
-    display: inline-block;
-    line-height: normal;
-    margin-left: auto;
-    margin-right: 0;
-    padding-left: 16px;
-    padding-right: 0;
-    white-space: nowrap;
-
+.freebirdFormviewerViewItemsRadioOptionContainer, .freebirdFormviewerViewItemsCheckboxContainer {
+    display: flex;
 }

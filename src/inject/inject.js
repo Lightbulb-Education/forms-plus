@@ -1,78 +1,70 @@
 $(document).ready(function () {
 
-    //create function to set max and min data attributes
-    function addMaxTextDataAttributes() {
-        var qs = FB_PUBLIC_LOAD_DATA_[1][1]
+    if (window.location.href.includes("https://docs.google.com/forms/d/e/")) {
+        //create function to set max and min data attributes
+        function addMaxTextDataAttributes() {
+            var qs = FB_PUBLIC_LOAD_DATA_[1][1]
 
-        for (var key of Object.keys(qs)) {
-            try {
-                var ele = document.querySelector("[data-item-id='" + qs[key][0] + "']")
+            for (var key of Object.keys(qs)) {
+                try {
+                    var ele = document.querySelector("[data-item-id='" + qs[key][0] + "']")
 
-                //verify validation is maximum character count
-                //TODO add behavior for minimum character count
-                if (qs[key][4][0][4][0][1] == 202) {
-                    ele.setAttribute("data-text-max", qs[key][4][0][4][0][2][0])
-                } else if (qs[key][4][0][4][0][1] == 203) {
-                    ele.setAttribute("data-text-min", qs[key][4][0][4][0][2][0])
+                    //verify validation is maximum character count
+                    //TODO add behavior for minimum character count
+                    if (qs[key][4][0][4][0][1] == 202) {
+                        ele.setAttribute("data-text-max", qs[key][4][0][4][0][2][0])
+                    } else if (qs[key][4][0][4][0][1] == 203) {
+                        ele.setAttribute("data-text-min", qs[key][4][0][4][0][2][0])
+                    }
+
+                } catch (e) {
                 }
-
-            } catch (e) {
             }
         }
-    }
 
-    var script = document.createElement('script');
-    script.appendChild(document.createTextNode('(' + addMaxTextDataAttributes + ')();'));
-    (document.body || document.head || document.documentElement).appendChild(script);
+        var script = document.createElement('script');
+        script.appendChild(document.createTextNode('(' + addMaxTextDataAttributes + ')();'));
+        (document.body || document.head || document.documentElement).appendChild(script);
 
-    //random hidden option value
-    function randomString(){
-        return Math.random().toString(36).substring(15);
-    }
+        //--------------------------------------------------------------------------------------------
+        //helper functions
 
-    if (window.location.href.includes("https://docs.google.com/forms/d/e/")) {
-        //configuration for radio buttons
+        //random hidden option value
+        function randomString() {
+            return Math.random().toString(36).substring(15);
+        }
 
-        $(".freebirdFormviewerViewItemsRadioChoicesContainer").each(function () {
-            //clone last option to create hidden element
-            var clone = $(this).children().last().clone().appendTo(this)
+        //configuration for radio button clone
+        function setupRadioClone(clone) {
             clone.attr("aria-hidden", "true")
             clone.find(".appsMaterialWizToggleRadiogroupEl")
                 .attr("label", "Hidden Option")
-                .attr("data-value",randomString())
+                .attr("data-value", randomString())
             clone.find(".appsMaterialWizToggleRadiogroupEl").removeClass("isChecked")
             clone.hide()
+        }
+
+        //check if a question is required
+        function isRequired(element) {
+            var parent = element.closest(".freebirdFormviewerViewItemsItemItem")
+            var required = parent.find(".freebirdFormviewerViewItemsItemRequiredAsterisk").length != 0
+            return required
+
+        }
+        //--------------------------------------------------------------------------------------------
+        //config for different items
+
+        //radio button select config
+        $(".freebirdFormviewerViewItemsRadioChoicesContainer").each(function () {
+            //clone last option to create hidden element
+            var clone = $(this).children().last().clone().appendTo(this)
+            setupRadioClone(clone)
 
             //add a eliminate button to each option
             $(this).find(".freebirdFormviewerViewItemsRadioOptionContainer").each(function () {
                 $(this).append("<a class='x-button'></a>")
             })
 
-        })
-
-        $(".freebirdFormviewerViewItemsRadiogroupRadioGroup").each(function(){
-            var lastElement = $(this).find("label.freebirdMaterialScalecontentColumn").last()
-            var clone = lastElement.clone().appendTo(lastElement.parent())
-            clone.attr("aria-hidden", true)
-            clone.find(".appsMaterialWizToggleRadiogroupEl")
-                .attr("label", "Hidden Option")
-                .attr("data-value", randomString())
-            clone.find(".appsMaterialWizToggleRadiogroupEl").removeClass("isChecked")
-            clone.hide()
-        })
-
-        $(".freebirdFormviewerViewItemsGridContainer").each(function(){
-            $(this).find("span.appsMaterialWizToggleRadiogroupGroupContent").each(function(){
-                var lastElement = $(this).children(".freebirdFormviewerViewItemsGridCell").last()
-                console.log(lastElement)
-                var clone = lastElement.clone().appendTo(this)
-                clone.attr("aria-hidden", true)
-                clone.find(".appsMaterialWizToggleRadiogroupEl")
-                    .attr("label", "Hidden Option")
-                    .attr("data-value", randomString())
-                clone.find(".appsMaterialWizToggleRadiogroupEl").removeClass("isChecked")
-                clone.hide()
-            })
         })
 
         //configuration for checkboxes
@@ -84,13 +76,30 @@ $(document).ready(function () {
 
         })
 
+        //scale item config
+        $(".freebirdFormviewerViewItemsRadiogroupRadioGroup").each(function () {
+            var lastElement = $(this).find("label.freebirdMaterialScalecontentColumn").last()
+            var clone = lastElement.clone().appendTo(lastElement.parent())
+            setupRadioClone(clone)
+        })
 
+        //radio grid config
+        $(".freebirdFormviewerViewItemsGridContainer").each(function () {
+            $(this).find("span.appsMaterialWizToggleRadiogroupGroupContent").each(function () {
+                var lastElement = $(this).children(".freebirdFormviewerViewItemsGridCell").last()
+                var clone = lastElement.clone().appendTo(this)
+                setupRadioClone(clone)
+            })
+        })
+
+        //--------------------------------------------------------------------------------------------
+        //radio click handlers
+
+        //radio select item
         $(".freebirdFormviewerViewItemsRadioChoicesContainer .freebirdThemedRadio").click(function () {
             var allOptions = $(this).closest(".freebirdFormviewerViewItemsRadioChoicesContainer").children()
-            var parent = $(this).closest(".freebirdFormviewerViewItemsItemItem")
-            var required = parent.find(".freebirdFormviewerViewItemsItemRequiredAsterisk").length != 0
 
-            if (!required) {
+            if (!isRequired(this)) {
                 //if radio is already checked...
                 if ($(this).children().hasClass("isChecked")) {
                     //...select the hidden option instead
@@ -99,12 +108,11 @@ $(document).ready(function () {
             }
         })
 
+        //radio grid item
         $(".freebirdFormviewerViewItemsGridContainer .freebirdThemedRadio").click(function () {
             var allOptions = $(this).closest(".appsMaterialWizToggleRadiogroupGroupContent").children(".freebirdFormviewerViewItemsGridCell")
-            var parent = $(this).closest(".freebirdFormviewerViewItemsItemItem")
-            var required = parent.find(".freebirdFormviewerViewItemsItemRequiredAsterisk").length != 0
 
-            if (!required) {
+            if (!isRequired(this)) {
                 //if radio is already checked...
                 if ($(this).children().hasClass("isChecked")) {
                     //...select the hidden option instead
@@ -113,13 +121,11 @@ $(document).ready(function () {
             }
         })
 
-
+        //scale item
         $(".freebirdFormviewerViewItemsRadiogroupRadioGroup .freebirdThemedRadio").click(function () {
             var allOptions = $(this).closest(".freebirdMaterialScalecontentContainer").children("label")
-            var parent = $(this).closest(".freebirdFormviewerViewItemsItemItem")
-            var required = parent.find(".freebirdFormviewerViewItemsItemRequiredAsterisk").length != 0
 
-            if (!required) {
+            if (!isRequired(this)) {
                 //if radio is already checked...
                 if ($(this).children().hasClass("isChecked")) {
                     //...select the hidden option instead
@@ -127,7 +133,8 @@ $(document).ready(function () {
                 }
             }
         })
-
+        //--------------------------------------------------------------------------------------------
+        //x-button
 
         //eliminate option on x-button click
         $(".x-button").click(eliminateOption)
@@ -154,7 +161,10 @@ $(document).ready(function () {
 
         }
 
-        //Add text counters
+        //--------------------------------------------------------------------------------------------
+        // text counters
+
+        //add text counters
         $(".freebirdFormviewerViewItemsTextTextItem").find(".freebirdFormviewerViewItemsTextLongText, .freebirdFormviewerViewItemsTextShortText").after(
             `<div class="text-counter-container">             
                 <div class="text-counter">0</div>
@@ -173,12 +183,12 @@ $(document).ready(function () {
                 parent.find(".text-counter")
                     .text($(this).val().length + " / " + maxChars)
                     .css("color", maxChars < $(this).val().length ? "#d93025" : "")
-                //if min chars display current-min
+            //if min chars display current-min
             } else if (minChars) {
                 parent.find(".text-counter")
                     .text($(this).val().length - minChars)
                     .css("color", ($(this).val().length) - minChars < 0 ? "#d93025" : "")
-                //else just show plain character count
+            //else just show plain character count
             } else {
                 parent.find(".text-counter")
                     .text(currentVal.length)

@@ -25,11 +25,13 @@ $(document).ready(function () {
     script.appendChild(document.createTextNode('(' + addMaxTextDataAttributes + ')();'));
     (document.body || document.head || document.documentElement).appendChild(script);
 
+    //random hidden option value
+    function randomString(){
+        return Math.random().toString(36).substring(15);
+    }
+
     if (window.location.href.includes("https://docs.google.com/forms/d/e/")) {
         //configuration for radio buttons
-
-        //random hidden option value
-        var r = Math.random().toString(36).substring(15);
 
         $(".freebirdFormviewerViewItemsRadioChoicesContainer").each(function () {
             //clone last option to create hidden element
@@ -37,7 +39,7 @@ $(document).ready(function () {
             clone.attr("aria-hidden", "true")
             clone.find(".appsMaterialWizToggleRadiogroupEl")
                 .attr("label", "Hidden Option")
-                .attr("data-value", r)
+                .attr("data-value",randomString())
             clone.find(".appsMaterialWizToggleRadiogroupEl").removeClass("isChecked")
             clone.hide()
 
@@ -54,9 +56,23 @@ $(document).ready(function () {
             clone.attr("aria-hidden", true)
             clone.find(".appsMaterialWizToggleRadiogroupEl")
                 .attr("label", "Hidden Option")
-                .attr("data-value", r)
+                .attr("data-value", randomString())
             clone.find(".appsMaterialWizToggleRadiogroupEl").removeClass("isChecked")
             clone.hide()
+        })
+
+        $(".freebirdFormviewerViewItemsGridContainer").each(function(){
+            $(this).find("span.appsMaterialWizToggleRadiogroupGroupContent").each(function(){
+                var lastElement = $(this).children(".freebirdFormviewerViewItemsGridCell").last()
+                console.log(lastElement)
+                var clone = lastElement.clone().appendTo(this)
+                clone.attr("aria-hidden", true)
+                clone.find(".appsMaterialWizToggleRadiogroupEl")
+                    .attr("label", "Hidden Option")
+                    .attr("data-value", randomString())
+                clone.find(".appsMaterialWizToggleRadiogroupEl").removeClass("isChecked")
+                clone.hide()
+            })
         })
 
         //configuration for checkboxes
@@ -79,6 +95,20 @@ $(document).ready(function () {
                 if ($(this).children().hasClass("isChecked")) {
                     //...select the hidden option instead
                     allOptions.last().children("label").click()
+                }
+            }
+        })
+
+        $(".freebirdFormviewerViewItemsGridContainer .freebirdThemedRadio").click(function () {
+            var allOptions = $(this).closest(".appsMaterialWizToggleRadiogroupGroupContent").children(".freebirdFormviewerViewItemsGridCell")
+            var parent = $(this).closest(".freebirdFormviewerViewItemsItemItem")
+            var required = parent.find(".freebirdFormviewerViewItemsItemRequiredAsterisk").length != 0
+
+            if (!required) {
+                //if radio is already checked...
+                if ($(this).children().hasClass("isChecked")) {
+                    //...select the hidden option instead
+                    allOptions.last().find(".appsMaterialWizToggleRadiogroupEl").click()
                 }
             }
         })

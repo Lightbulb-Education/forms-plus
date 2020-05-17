@@ -78,7 +78,6 @@
     margin: 0;
 }
 
-<<<<<<< HEAD
 .no-click {
     pointer-events: none;
 }
@@ -106,10 +105,3 @@
     white-space: nowrap;
 
 }
-=======
-.reset-button{
-    margin: 0;
-    display: block;
-    margin-right: 8px;
-}
->>>>>>> allow deselection of radio buttons

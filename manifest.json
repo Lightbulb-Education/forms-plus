@@ -9,13 +9,6 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  "default_locale": "en",
->>>>>>> allow deselection of radio buttons
-=======
->>>>>>> Cleaning up
   "permissions": [
     "https://docs.google.com/forms/d/e/*"
   ],

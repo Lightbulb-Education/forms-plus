@@ -51,6 +51,7 @@ $(document).ready(function () {
             return required
 
         }
+
         //--------------------------------------------------------------------------------------------
         //config for different items
 
@@ -178,20 +179,19 @@ $(document).ready(function () {
             var minChars = parent.attr('data-text-min');
             var currentVal = $(this).val()
 
+            var counter = parent.find(".google-improvements-text-counter")
+
             //if max chars display current/total
             if (maxChars) {
-                parent.find(".google-improvements-text-counter")
-                    .text($(this).val().length + " / " + maxChars)
+                counter.text($(this).val().length + " / " + maxChars)
                     .css("color", maxChars < $(this).val().length ? "#d93025" : "")
             //if min chars display current-min
             } else if (minChars) {
-                parent.find(".google-improvements-text-counter")
-                    .text($(this).val().length - minChars)
+                counter.text($(this).val().length - minChars)
                     .css("color", ($(this).val().length) - minChars < 0 ? "#d93025" : "")
             //else just show plain character count
             } else {
-                parent.find(".google-improvements-text-counter")
-                    .text(currentVal.length)
+                counter.text(currentVal.length)
             }
 
         })

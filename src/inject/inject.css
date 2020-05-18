@@ -98,3 +98,37 @@
 .freebirdFormviewerViewItemsRadioOptionContainer, .freebirdFormviewerViewItemsCheckboxContainer {
     display: flex;
 }
+
+
+.freebirdFormviewerViewFormContentWrapper {
+    background: #121212;
+}
+
+.freebirdFormviewerViewItemsItemItem, .freebirdFormviewerViewHeaderHeader {
+    background: #222222 !important;
+    border: 1px solid #2c2c2c !important;
+}
+
+.freebirdCustomFont, .freebirdFormviewerViewFormContent, .freebirdFormviewerViewHeaderDescription {
+    color: white !important;
+}
+
+.m2 .freebirdFormviewerViewItemsRadioLabel, .docssharedWizToggleLabeledLabelText {
+    color: white !important;
+}
+
+.m2 .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextShortText .exportInput, .m2 .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextLongText .exportTextarea {
+    color: white !important;
+}
+
+.quantumWizTogglePapercheckboxInnerBox {
+    border: 8px solid #222222 !important;
+}
+
+.freebirdFormviewerViewNavigationPasswordWarning, .freebirdDisclaimerColor  {
+    color: #70757a !important;
+}
+
+.m2 .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextShortText .exportLabel, .m2 .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextLongText .exportLabel{
+    color: hsl(0, 0%, 70%) !important;
+}

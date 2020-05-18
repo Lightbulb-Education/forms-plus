@@ -1,6 +1,6 @@
 {
   "name": "Forms+",
-  "version": "0.0.2",
+  "version": "0.0.2.1",
   "manifest_version": 2,
   "description": "This extension adds some quality of life improvements to Google Forms.",
   "homepage_url": "https://lightbulb.education",
@@ -9,9 +9,6 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "permissions": [
-    "https://docs.google.com/forms/d/e/*"
-  ],
   "content_scripts": [
     {
       "matches": [

@@ -100,35 +100,76 @@
 }
 
 
-.freebirdFormviewerViewFormContentWrapper {
+/*page background*/
+.google-improvements-dark-theme .freebirdFormviewerViewFormContentWrapper {
     background: #121212;
 }
 
-.freebirdFormviewerViewItemsItemItem, .freebirdFormviewerViewHeaderHeader {
+/*item background*/
+.google-improvements-dark-theme .freebirdFormviewerViewItemsItemItem,
+.google-improvements-dark-theme .freebirdFormviewerViewHeaderHeader {
     background: #222222 !important;
     border: 1px solid #2c2c2c !important;
 }
 
-.freebirdCustomFont, .freebirdFormviewerViewFormContent, .freebirdFormviewerViewHeaderDescription {
+
+
+.google-improvements-dark-theme .freebirdCustomFont, .google-improvements-dark-theme .freebirdFormviewerViewFormContent, .google-improvements-dark-theme .freebirdFormviewerViewHeaderDescription,
+.google-improvements-dark-theme .freebirdFormviewerViewItemsRadioLabel, .google-improvements-dark-theme .docssharedWizToggleLabeledLabelText,
+.google-improvements-dark-theme .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextShortText .exportInput,
+.google-improvements-dark-theme .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextLongText .exportTextarea,
+.google-improvements-dark-theme .freebirdFormviewerViewItemsGridCell,
+.google-improvements-dark-theme .freebirdMaterialScalecontentLabel, .google-improvements-dark-theme .freebirdMaterialScalecontentRangeLabelContainer,
+.google-improvements-dark-theme .freebirdFormviewerViewItemsSectionheaderDescriptionText,
+.google-improvements-dark-theme .freebirdFormviewerViewNavigationPercentComplete,
+.google-improvements-dark-theme .freebirdFormviewerViewFooterImageContainer span {
     color: white !important;
 }
 
-.m2 .freebirdFormviewerViewItemsRadioLabel, .docssharedWizToggleLabeledLabelText {
-    color: white !important;
+.google-improvements-dark-theme .freebirdFormviewerViewFooterImageContainer img {
+    background: white;
 }
 
-.m2 .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextShortText .exportInput, .m2 .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextLongText .exportTextarea {
-    color: white !important;
+.google-improvements-dark-theme .freebirdFormviewerViewItemsGridUngraded freebirdFormviewerViewItemsGridRowGroup {
+    background: grey !important;
 }
 
-.quantumWizTogglePapercheckboxInnerBox {
+.google-improvements-dark-theme .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridRow.freebirdFormviewerViewItemsGridColumnHeader .freebirdFormviewerViewItemsGridCell:first-child,
+.google-improvements-dark-theme .freebirdFormviewerViewItemsGridSpacerRow {
+    background: transparent !important;
+}
+
+/*.google-improvements-dark-theme .m2 .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridUngraded .freebirdFormviewerViewItemsGridCell:first-child,*/
+/*.google-improvements-dark-theme .m2 .freebirdFormviewerViewItemsGridScrollingData .freebirdFormviewerViewItemsGridUngraded,*/
+/*.google-improvements-dark-theme .m2 .freebirdFormviewerViewItemsGridScrollingData .freebirdFormviewerViewItemsGridUngraded:nth-child(odd),*/
+/*.google-improvements-dark-theme .m2 .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridUngraded:nth-child(odd) .freebirdFormviewerViewItemsGridCell:first-child,*/
+/*.google-improvements-dark-theme .m2 .freebirdFormviewerViewItemsGridScrollingData .freebirdFormviewerViewItemsGridUngraded:nth-child(even),*/
+/*.google-improvements-dark-theme .m2 .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridUngraded:nth-child(even) .freebirdFormviewerViewItemsGridCell:first-child,*/
+.google-improvements-dark-theme .quantumWizTextinputPapertextareaUnderline,
+.google-improvements-dark-theme .quantumWizTextinputPaperinputUnderline {
+    background: hsl(0, 0%, 20%) !important;
+}
+
+.google-improvements-dark-theme .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridUngraded .freebirdFormviewerViewItemsGridCell:first-child,
+.google-improvements-dark-theme .freebirdFormviewerViewItemsGridScrollingData .freebirdFormviewerViewItemsGridUngraded,
+.google-improvements-dark-theme .freebirdFormviewerViewItemsGridScrollingData .freebirdFormviewerViewItemsGridUngraded:nth-child(odd),
+.google-improvements-dark-theme .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridUngraded:nth-child(odd) .freebirdFormviewerViewItemsGridCell:first-child,
+.google-improvements-dark-theme .freebirdFormviewerViewItemsGridScrollingData .freebirdFormviewerViewItemsGridUngraded:nth-child(even),
+.google-improvements-dark-theme .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridUngraded:nth-child(even) .freebirdFormviewerViewItemsGridCell:first-child{
+    background: hsl(0, 0%, 20%) !important;
+}
+
+.google-improvements-dark-theme .quantumWizTogglePapercheckboxInnerBox {
     border: 8px solid #222222 !important;
 }
 
-.freebirdFormviewerViewNavigationPasswordWarning, .freebirdDisclaimerColor  {
+.google-improvements-dark-theme .freebirdFormviewerViewNavigationPasswordWarning,
+.google-improvements-dark-theme .freebirdDisclaimerColor, .google-improvements-dark-theme .freebirdDisclaimerColor a {
     color: #70757a !important;
 }
 
-.m2 .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextShortText .exportLabel, .m2 .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextLongText .exportLabel{
+
+.google-improvements-dark-theme.freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextShortText .exportLabel,
+.google-improvements-dark-theme .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextLongText .exportLabel {
     color: hsl(0, 0%, 70%) !important;
 }

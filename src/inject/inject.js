@@ -52,6 +52,37 @@ $(document).ready(function () {
 
         }
 
+        function isDarkMode() {
+            return (
+                window.matchMedia &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches
+            );
+        }
+
+        //dark theme init
+        $(".freebirdFormviewerViewFormContentWrapper").append(`
+            <a class="google-improvements-float">
+                <div class="google-improvements-moon-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"
+                    viewBox="-6 -6 12 12">
+                    <defs>
+                        <mask id="a">
+                            <rect width="10" height="10" x="-5" y="-5" fill="#ffffff"/>
+                            <circle cx="3" r="5"/>
+                        </mask>
+                    </defs>
+                    <circle r="5" fill="currentColor" mask="url(#a)" transform="rotate(-23)"/>
+                    </svg>
+                </div>
+            </a>`)
+
+        if(isDarkMode()){
+            $("html").addClass("google-improvements-dark-theme")
+        }
+        $(".google-improvements-float").click(function () {
+            $("html").toggleClass("google-improvements-dark-theme")
+        })
+
         //--------------------------------------------------------------------------------------------
         //config for different items
 
@@ -185,11 +216,11 @@ $(document).ready(function () {
             if (maxChars) {
                 counter.text($(this).val().length + " / " + maxChars)
                     .css("color", maxChars < $(this).val().length ? "#d93025" : "")
-            //if min chars display current-min
+                //if min chars display current-min
             } else if (minChars) {
                 counter.text($(this).val().length - minChars)
                     .css("color", ($(this).val().length) - minChars < 0 ? "#d93025" : "")
-            //else just show plain character count
+                //else just show plain character count
             } else {
                 counter.text(currentVal.length)
             }

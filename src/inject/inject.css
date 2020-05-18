@@ -173,3 +173,20 @@
 .google-improvements-dark-theme .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextLongText .exportLabel {
     color: hsl(0, 0%, 70%) !important;
 }
+
+
+.google-improvements-float{
+    position:fixed;
+    width:48px;
+    height:48px;
+    bottom:96px;
+    right:24px;
+    background-color:#0C9;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+}
+
+.google-improvements-moon-icon{
+    margin-top: 12px !important;
+}

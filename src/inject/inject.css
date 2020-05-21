@@ -101,8 +101,9 @@
 
 
 /*page background*/
-.google-improvements-dark-theme .freebirdFormviewerViewFormContentWrapper {
-    background: #121212;
+.google-improvements-dark-theme .freebirdFormviewerViewFormContentWrapper,
+.google-improvements-dark-theme body{
+    background: #121212 !important;
 }
 
 /*item background*/

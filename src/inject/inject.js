@@ -232,7 +232,7 @@ $(document).ready(function () {
 
         //add text counters
         $(".freebirdFormviewerViewItemsTextTextItem").find(".freebirdFormviewerViewItemsTextLongText, .freebirdFormviewerViewItemsTextShortText").after(
-            `<div class="google-improvements-text-counter-container">             
+            `<div class="google-improvements-text-counter-container">
                 <div class="google-improvements-text-counter">0</div>
             </div>`
         )

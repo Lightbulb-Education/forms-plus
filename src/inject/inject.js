@@ -76,12 +76,28 @@ $(document).ready(function () {
                 </div>
             </a>`)
 
-        if(isDarkMode()){
-            $("html").addClass("google-improvements-dark-theme")
-        }
-        $(".google-improvements-float").click(function () {
-            $("html").toggleClass("google-improvements-dark-theme")
-        })
+        chrome.storage.local.get(['dark'], function (result) {
+            var dark = result.dark
+
+            if (typeof dark == 'undefined') {
+                dark = isDarkMode()
+                chrome.storage.local.set({dark: dark}, darkInit);
+            } else {
+                darkInit()
+            }
+
+            function darkInit() {
+                if (dark) {
+                    $("html").addClass("google-improvements-dark-theme")
+                }
+                $(".google-improvements-float").click(function () {
+                    var html = $("html")
+                    html.toggleClass("google-improvements-dark-theme")
+                    dark = html.hasClass("google-improvements-dark-theme")
+                    chrome.storage.local.set({dark: dark});
+                })
+            }
+        });
 
         //--------------------------------------------------------------------------------------------
         //config for different items

@@ -130,9 +130,17 @@
     background: white;
 }
 
-.google-improvements-dark-theme .freebirdFormviewerViewItemsGridUngraded freebirdFormviewerViewItemsGridRowGroup,
-.google-improvements-dark-theme .google-improvements-x-button {
+.google-improvements-dark-theme .freebirdFormviewerViewItemsGridUngraded freebirdFormviewerViewItemsGridRowGroup {
     background: grey !important;
+}
+
+.google-improvements-dark-theme .google-improvements-x-button {
+    background: grey;
+}
+
+.google-improvements-dark-theme  .google-improvements-x-button:hover {
+    display: block;
+    background: red;
 }
 
 .google-improvements-dark-theme .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridRow.freebirdFormviewerViewItemsGridColumnHeader .freebirdFormviewerViewItemsGridCell:first-child,

@@ -140,15 +140,9 @@
     background: transparent !important;
 }
 
-/*.google-improvements-dark-theme .m2 .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridUngraded .freebirdFormviewerViewItemsGridCell:first-child,*/
-/*.google-improvements-dark-theme .m2 .freebirdFormviewerViewItemsGridScrollingData .freebirdFormviewerViewItemsGridUngraded,*/
-/*.google-improvements-dark-theme .m2 .freebirdFormviewerViewItemsGridScrollingData .freebirdFormviewerViewItemsGridUngraded:nth-child(odd),*/
-/*.google-improvements-dark-theme .m2 .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridUngraded:nth-child(odd) .freebirdFormviewerViewItemsGridCell:first-child,*/
-/*.google-improvements-dark-theme .m2 .freebirdFormviewerViewItemsGridScrollingData .freebirdFormviewerViewItemsGridUngraded:nth-child(even),*/
-/*.google-improvements-dark-theme .m2 .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridUngraded:nth-child(even) .freebirdFormviewerViewItemsGridCell:first-child,*/
 .google-improvements-dark-theme .quantumWizTextinputPapertextareaUnderline,
 .google-improvements-dark-theme .quantumWizTextinputPaperinputUnderline {
-    background: hsl(0, 0%, 20%) !important;
+    background: hsl(0, 0%, 50%) !important;
 }
 
 .google-improvements-dark-theme .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridUngraded .freebirdFormviewerViewItemsGridCell:first-child,

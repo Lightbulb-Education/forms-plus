@@ -138,7 +138,7 @@
     background: grey;
 }
 
-.google-improvements-dark-theme  .google-improvements-x-button:hover {
+.google-improvements-dark-theme .google-improvements-x-button:hover {
     display: block;
     background: red;
 }
@@ -149,7 +149,8 @@
 }
 
 .google-improvements-dark-theme .quantumWizTextinputPapertextareaUnderline,
-.google-improvements-dark-theme .quantumWizTextinputPaperinputUnderline {
+.google-improvements-dark-theme .quantumWizTextinputPaperinputUnderline,
+.google-improvements-dark-theme .quantumWizTextinputSimpleinputUnderline {
     background: hsl(0, 0%, 40%) !important;
 }
 

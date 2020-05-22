@@ -76,9 +76,11 @@ $(document).ready(function () {
                 </div>
             </a>`)
 
+        //get dark mode status
         chrome.storage.local.get(['dark'], function (result) {
             var dark = result.dark
 
+            // if not already set default to device color scheme
             if (typeof dark == 'undefined') {
                 dark = isDarkMode()
                 chrome.storage.local.set({dark: dark}, darkInit);
@@ -87,15 +89,31 @@ $(document).ready(function () {
             }
 
             function darkInit() {
+                //set dark mode to match setting
                 if (dark) {
                     $("html").addClass("google-improvements-dark-theme")
                 }
+
+                // on click, toggle dark mode and update chrome setting
                 $(".google-improvements-float").click(function () {
                     var html = $("html")
                     html.toggleClass("google-improvements-dark-theme")
                     dark = html.hasClass("google-improvements-dark-theme")
                     chrome.storage.local.set({dark: dark});
                 })
+
+                // on dark status change, update across all tabs
+                chrome.storage.onChanged.addListener(function () {
+                    chrome.storage.local.get(['dark'], function (update) {
+                        dark = update.dark
+                        if (dark) {
+                            $("html").addClass("google-improvements-dark-theme")
+                        } else {
+                            $("html").removeClass("google-improvements-dark-theme")
+                        }
+                    })
+                })
+
             }
         });
 

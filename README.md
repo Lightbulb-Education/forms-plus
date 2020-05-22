@@ -1,4 +1,4 @@
-# eliminate-answers
+# forms-plus
 A Chrome extension to eliminate answers on Google Forms, plus more!
 
 This Google Chrome extension provides quality of life improvements of top of Google Forms, giving users the ability to:

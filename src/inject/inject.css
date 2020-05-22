@@ -102,7 +102,7 @@
 
 /*page background*/
 .google-improvements-dark-theme .freebirdFormviewerViewFormContentWrapper,
-.google-improvements-dark-theme body{
+.google-improvements-dark-theme body {
     background: #121212 !important;
 }
 
@@ -112,7 +112,6 @@
     background: #222222 !important;
     border: 1px solid #2c2c2c !important;
 }
-
 
 
 .google-improvements-dark-theme .freebirdCustomFont, .google-improvements-dark-theme .freebirdFormviewerViewFormContent, .google-improvements-dark-theme .freebirdFormviewerViewHeaderDescription,
@@ -131,7 +130,8 @@
     background: white;
 }
 
-.google-improvements-dark-theme .freebirdFormviewerViewItemsGridUngraded freebirdFormviewerViewItemsGridRowGroup {
+.google-improvements-dark-theme .freebirdFormviewerViewItemsGridUngraded freebirdFormviewerViewItemsGridRowGroup,
+.google-improvements-dark-theme .google-improvements-x-button {
     background: grey !important;
 }
 
@@ -156,7 +156,7 @@
 .google-improvements-dark-theme .freebirdFormviewerViewItemsGridScrollingData .freebirdFormviewerViewItemsGridUngraded:nth-child(odd),
 .google-improvements-dark-theme .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridUngraded:nth-child(odd) .freebirdFormviewerViewItemsGridCell:first-child,
 .google-improvements-dark-theme .freebirdFormviewerViewItemsGridScrollingData .freebirdFormviewerViewItemsGridUngraded:nth-child(even),
-.google-improvements-dark-theme .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridUngraded:nth-child(even) .freebirdFormviewerViewItemsGridCell:first-child{
+.google-improvements-dark-theme .freebirdFormviewerViewItemsGridPinnedHeader .freebirdFormviewerViewItemsGridUngraded:nth-child(even) .freebirdFormviewerViewItemsGridCell:first-child {
     background: hsl(0, 0%, 20%) !important;
 }
 
@@ -170,24 +170,31 @@
 }
 
 
-.google-improvements-dark-theme.freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextShortText .exportLabel,
+.google-improvements-dark-theme .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextShortText .exportLabel,
 .google-improvements-dark-theme .freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextLongText .exportLabel {
     color: hsl(0, 0%, 70%) !important;
 }
 
-
-.google-improvements-float{
-    position:fixed;
-    width:48px;
-    height:48px;
-    bottom:96px;
-    right:24px;
-    background-color:#0C9;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
+.google-improvements-dark-theme a {
+    color: skyblue;
 }
 
-.google-improvements-moon-icon{
+.google-improvements-float {
+    position: fixed;
+    width: 48px;
+    height: 48px;
+    bottom: 96px;
+    right: 24px;
+    background-color: cornflowerblue;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.google-improvements-dark-theme .google-improvements-float {
+    background-color: steelblue !important;
+}
+
+.google-improvements-moon-icon {
     margin-top: 12px !important;
 }

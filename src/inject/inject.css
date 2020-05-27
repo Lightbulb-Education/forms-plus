@@ -122,7 +122,8 @@
 .google-improvements-dark-theme .freebirdMaterialScalecontentLabel, .google-improvements-dark-theme .freebirdMaterialScalecontentRangeLabelContainer,
 .google-improvements-dark-theme .freebirdFormviewerViewItemsSectionheaderDescriptionText,
 .google-improvements-dark-theme .freebirdFormviewerViewNavigationPercentComplete,
-.google-improvements-dark-theme .freebirdFormviewerViewFooterImageContainer span {
+.google-improvements-dark-theme .freebirdFormviewerViewFooterImageContainer span,
+.google-improvements-dark-theme .freebirdFormviewerViewItemsItemItemHelpText{
     color: white !important;
 }
 
